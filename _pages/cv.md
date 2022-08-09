@@ -16,15 +16,17 @@ Profile
 
 Education
 ======
-* Ph.D in Nutrition, Université Laval, 2022
+* Ph.D. in Nutrition, Université Laval, 2022
+  * Thesis: *[Mesure de la qualité de l’alimentation et des habitudes alimentaires: défis et solutions](http://hdl.handle.net/20.500.11794/73728)*
 * M.Sc. in Nutrition, Université Laval, 2017
+  * Thesis: *[Étude de l'impact des gras laitiers sur la capacité des lipoprotéines de haute densité à stimuler l'efflux de cholestérol](http://hdl.handle.net/20.500.11794/27759)*
 * B.Sc. in Nutrition, Université Laval, 2014
 
 Work experience
 ======
 * 2021-2022: Research Intern
   * Research center of the *Institut Universitaire de Cardiologie et de Pneumologie de Québec*
-  * Examining the relationship between adherence to Canada’s Food Guide 2019 recommendations on healthy food choices and cardiovascular diseases using observational data from the UK Biobank
+  * Examine the relationship between adherence to Canada’s Food Guide 2019 recommendations on healthy food choices and cardiovascular diseases using observational data from the UK Biobank
   * Supervisor: Prof. Benoît Lamarche and Prof. Benoît J. Arsenault
   
 * 2019-2020: Casual employee (Epidemiologist/Biostatistician/Researcher)
@@ -34,7 +36,7 @@ Work experience
 
 * 2017-2020: Casual employee (Research Assistant)
   * University of Toronto
-  * Preforming analysis to examine the effect of consuming voluntarily fortified food and beverages on usual nutrient intakes in the Canadian population (*Canadian Community Health Survey 2015*)
+  * Perform analysis to examine the effect of consuming voluntarily fortified food and beverages on usual nutrient intakes in the Canadian population (*Canadian Community Health Survey 2015*)
   * Supervisor: Prof. Valerie Tarasuk
 
 Publications
