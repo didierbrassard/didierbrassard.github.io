@@ -24,11 +24,16 @@ Education
 
 Work experience
 ======
+* 2022-ongoing: Postdoctoral research fellow
+  * School of Human Nutrition, McGill University
+  * Project: [Health effects of adhering to Canada's food guide recommendations in older adults: a target trial emulation](https://webapps.cihr-irsc.gc.ca/decisions/p/project_details.html?applId=455011&lang=en)
+  * Supervisor: Prof. Stéphanie Chevalier
+
 * 2021-2022: Research Intern
   * Research center of the *Institut Universitaire de Cardiologie et de Pneumologie de Québec*
   * Examine the relationship between adherence to Canada’s Food Guide 2019 recommendations on healthy food choices and cardiovascular diseases using observational data from the UK Biobank
   * Supervisor: Prof. Benoît Lamarche and Prof. Benoît J. Arsenault
-  
+
 * 2019-2020: Casual employee (Epidemiologist/Biostatistician/Researcher)
   * Health Canada (Office of Nutrition Policy and Promotion)
   * Development of adherence assessment tools reflecting the 2019 Canada’s Food Guide
