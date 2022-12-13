@@ -17,3 +17,9 @@ _talks/_2012-03-01-talk-1.md
 _talks/_2013-03-01-tutorial-1.md
 images/_profile.png
 *.bib
+_teaching/_2014-spring-teaching-1.md
+_teaching/_2015-spring-teaching-2.md
+_posts/*.html
+_posts/post_data/*.sas7bdat
+_posts/*.jpg
+_posts/*.png
