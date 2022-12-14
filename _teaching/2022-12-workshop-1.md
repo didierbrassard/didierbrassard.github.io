@@ -12,7 +12,7 @@ location: "Québec, Canada"
 
 Description
 ======
-This workshop is an introduction to random measurement error in nutrition research. The theory is covered in the presentation, while the practical aspects (SAS codes) are covered in the corresponding Github respository.
+This workshop is an introduction to measurement error in nutrition research, particularly random errors. While it is obvious that a systematic error (difference) between the "true" value and its measurement can be a problem, the impact of random errors is often more subtle. However, in many cases, random errors can be as problematic as systematic errors if they are ignored. The theory is covered in the presentation, while the practical aspects (SAS codes) are covered in the corresponding Github respository.
 
 The objectives of the workshop are as follows:  
 
@@ -30,12 +30,14 @@ The objectives of the workshop are as follows:
 3. Exercises
 - Explore application of the NCI univariate method to obtain a distribution
 
-Slides
+Presentation
 ======
 
-[English slides are available on Google drive](https://drive.google.com/file/d/1VKxCEDkiGSCbAYVioob-s4krjDJut4uT/view?usp=sharing)
+Slides for the workshop are available online: [English version on Google Drive](https://drive.google.com/file/d/1VKxCEDkiGSCbAYVioob-s4krjDJut4uT/view?usp=sharing)
+
+I have also written two blog posts about measurement error: *[‘Statistical concept you should know’: random and systematic measurement errors](https://didierbrassard.github.io/posts/2022/11/blog-post-6/)* and *[Impact of random errors: two nutrition examples](https://didierbrassard.github.io/posts/2022/11/blog-post-7/)*. These posts may help better understand some concepts from the presentation.
 
 Code
 ======
 
-Supporting SAS codes to explore basic aspects of random measurement error and application of the NCI univariate method are [available at this Github repository](https://github.com/didierbrassard/nci_workshop).
+Supporting SAS codes to explore basic aspects of random measurement error and application of the NCI univariate method are [available in a Github repository](https://github.com/didierbrassard/nci_workshop). The data used for example is a subset of the Canadian Community Health Survey (CCHS) 2015 - Nutrition including only participants aged 20 to 30 years old. 
