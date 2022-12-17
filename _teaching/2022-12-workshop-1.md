@@ -41,3 +41,5 @@ Code
 ======
 
 Supporting SAS codes to explore basic aspects of random measurement error and application of the NCI univariate method are [available in a Github repository](https://github.com/didierbrassard/nci_workshop). The data used for example is a subset of the Canadian Community Health Survey (CCHS) 2015 - Nutrition including only participants aged 20 to 30 years old. 
+
+**Acknowledgement:** I am incredibly grateful to Professors Anne-Sophie Morisset (Université Laval) and Bénédicte Fontaine-Bisson (University of Ottawa) for their financial support and assistance in organizing the original French version of this workshop.
