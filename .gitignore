@@ -20,6 +20,6 @@ images/_profile.png
 _teaching/_2014-spring-teaching-1.md
 _teaching/_2015-spring-teaching-2.md
 _posts/*.html
-_posts/post_data/*.sas7bdat
+_posts/post_data/*
 _posts/*.jpg
 _posts/*.png
