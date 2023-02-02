@@ -1,0 +1,245 @@
+ /*************************************************************************/
+ /*                                                                       */
+ /*                   Miscellaneous statistical methods                   */
+ /*                                                                       */
+ /*    Code 9.1: Restricted cubic spline with linear regression models    */
+ /*                                                                       */
+ /*                        Author: Didier Brassard                        */
+ /*                                                                       */
+ /*                               Version 1                               */
+ /*                               25APR2022                               */
+ /*                                                                       */
+ /*************************************************************************/
+
+ /*************************************************************************/
+ /*                                                                       */
+ /*       Prepare data for analysis based on built-in sashelp.heart       */
+ /*                                                                       */
+ /*************************************************************************/
+
+	data heart(rename=(AgeAtStart=Age0));
+		set sashelp.heart; 
+	* create subject id based on row number;
+		subjectid = _N_ ; 
+		
+	* height, in to m ;
+		if not missing(height) then height = height*2.54/100  ;
+		
+	* weight, lb to kg ;
+		if not missing(weight) then weight = weight*0.453592 ;
+		
+	* calulate bmi at baseline;
+		if not missing(weight) AND not missing(height) then bmi = weight/ (height)**2;
+		
+	* Cholesterol, mg/dL to mmol/L ;
+		if not missing(cholesterol) then cholesterol = cholesterol * 0.02586 ;
+		
+	* keep relevant variables;
+	keep status deathcause smoking cholesterol sex bmi
+		weight height diastolic systolic bp_status smoking age: ;
+	run;
+
+ /*************************************************************************/
+ /*                                                                       */
+ /*        Describe the relationship between risk markers and age         */
+ /*                                                                       */
+ /*************************************************************************/
+
+/* Dependant variables: blood pressure (systolic, diastolic), cholesterol and bmi */
+/* Independent variables: age */
+
+/* descriptive stat */
+	proc means data=heart n nmiss mean std min p25 p50 p75 max ;
+	var age0 systolic diastolic cholesterol bmi;
+	run;
+
+
+ /*************************************************************************/
+ /*                                                                       */
+ /*    Example 1 - Bad model: categorization of a continuous variable     */
+ /*                                                                       */
+ /*************************************************************************/
+
+/* Model: (Y | age2 + age3 + age4)
+/* Assumption: linearity across categories and CONSTANT EFFECT within categories, e~N(0,sigma2), i.i.d. */
+
+/* 1) Categorize according to quartiles of age */
+	proc rank data=heart groups=4 out=heart;
+	var age0 ;
+	ranks age0_q ;
+	run;
+	
+	/* add constant so age0_q ranges from 1 to q */
+	data heart;
+		set heart;
+	age0_q = age0_q+1;
+	run;
+	
+	proc freq data=heart;
+	table age0_q ;
+	run;
+
+/* 2) Linear model */
+	proc genmod data=heart plots=none;
+	title1 "Linear model with age categorized (proc genmod)";
+	class age0_q ;
+	model cholesterol = age0_q / dist=normal link=identity;
+	lsmeans age0_q / diff=control cl ;
+	run;
+	title1;
+
+ /*************************************************************************/
+ /*                                                                       */
+ /*      Example 2 - Naive model: assuming linearity in the exposure      */
+ /*                                                                       */
+ /*************************************************************************/
+
+/* Model: (Y | age)
+/* Assumption: linearity, e~N(0,sigma2), i.i.d. */
+
+/* 1) Linear model */
+	proc genmod data=heart;
+	title1 "Linear model with continuous age";
+	model cholesterol = age0 / dist=normal link=identity;
+	store lm ;
+	run;
+	title1;
+	
+/* 2) plot results using proc plm */
+	proc plm restore=lm  noinfo noclprint ;
+		effectplot fit(x= age0 ) / clm ;
+	run;
+
+/* 3) Linear model with estimate statement */
+	proc genmod data=heart;
+	model cholesterol = age0 / dist=normal link=identity;
+	estimate "Change in cholesterol (mmol/L) for 1 year increase" age0 1  ;
+	estimate "Change in cholesterol (mmol/L) for 10 year increase" age0 10 ;
+	estimate "Change in cholesterol (mmol/L) for 14 year increase (Q3-Q1)" age0 14 ;
+	run;
+	
+	/* but what if the relationship is not entirely linear?
+		e.g., u- or j-shaped relationship, plateaus, etc */
+	
+ /*************************************************************************/
+ /*                                                                       */
+ /*          Example 3 - Flexible model: no linearity assumption          */
+ /*                                                                       */
+ /*************************************************************************/
+
+/* Model: (Y | rcs(age,k)) */
+/* Assumption: e~N(0,sigma2), i.i.d. */
+
+ /*************************************************************************/
+ /*    But what is actually a restricted cubic spline transformation?     */
+ /*************************************************************************/
+	
+	/* note: rcs = restricted cubic spline, k = number of knots. Knots are commonly
+		placed at given percentile of the variable, i.e. to ensure that there are enough
+		data between intervals.
+		Example: 
+		3 knots: 10 50 90  
+		4 knots: 5 35 65 95 
+		5 knots: 5 27.5 50 72.5 95 
+		6 knots: 5 23 41 59 77 95 
+		7 knots: 2.5 18.33 34.17 50 65.83 81.67 97.5
+		*/
+
+ /*************************************************************************/
+ /*               Use <effect> option for efficient coding                */
+ /*************************************************************************/
+
+	/* note: not all SAS procedures supported built-in effect option to transform variables.
+		Supported proc: 
+		GLIMMIX, GLMSELECT, HPMIXED, LOGISTIC, ORTHOREG, PHREG
+		PLS, PLM, QUANTREG, ROBUSTREG, SURVEYLOGISTIC, SURVEYREG */
+
+
+/* 1) Linear model */
+
+	/* note: proc surveyreg used here, but not necessarily superior to other procedures */
+	
+	proc surveyreg data=heart;
+	title1 "Linear model with restricted cubic spline transformation coded using <effect> option";
+	effect spl_x = spline( age0 / details naturalcubic basis=tpf(noint) 
+	knotmethod=percentilelist(5 35 65 95 ));
+	model cholesterol = spl_x ;
+	store lm_rcs ;
+	run;
+	title1;
+	
+/* 2) plot results using proc plm */
+	proc plm restore=lm_rcs  noinfo noclprint ;
+	title1 "Cholesterol / rcs(age0,4)";
+		effectplot fit(x= age0 ) / clm ;
+	run;
+	title1;
+	
+	/* note: proc plm automatically standardizes data when covariate are used */
+
+/* 3) export data to make better looking plot (eg, ggplot2 in R) */
+ 	ods trace on;
+ 	proc plm restore=lm_rcs  noinfo noclprint ;
+		effectplot fit(x= age0 ) / clm ;
+		ods output FitPlot=lm_rcs ;
+	run;
+	ods trace off;
+	
+	data lm_rcs_fmt;
+		set lm_rcs;
+	rename _LCLM=lcl _UCLM =ucl _XCONT1=age0 _PREDICTED=cholesterol;
+	run;
+
+/* 4) what about knots? */
+
+	/* example: say a reviewer asks for knots to be displayed on the curve */
+
+	/* note: we can use proc plm to obtain predicted values (i.e., E[Y|X=x]) */
+
+	/*4.1) Create a data with percentile values knots */
+	data knots_x;
+		* variable name must be consistent with those from the model ;
+		age0=32;
+		output; * write observations in data;
+		age0=39;
+		output;
+		age0=48;
+		output;
+		age0=58;
+		output;
+	run;
+	
+	proc print data=knots_x;
+	run;
+	
+	/* 4.2) Use proc plm with <restore> to predict Y values according to those X values */
+	proc plm restore=lm_rcs;
+	score data=knots_x out=knots_x_y;
+	run;
+	
+	proc print data=knots_x_y;
+	title1 "Predicted Y values (i.e., cholesterol concentration) according to rcs(X) values (i.e., age0)";
+	run;
+	title1;
+	
+	/* 4.3) Plot using R or SAS example below  */
+	
+	data curve_n_knots;
+		set lm_rcs_fmt knots_x_y(rename=(age0=knots_x predicted=knots_y));
+	run;
+	
+	/* In SAS: must be in the same data */
+
+	proc sgplot data= curve_n_knots noautolegend;
+	title1 "Relationship between cholesterol concentration and age";
+	* curve ;
+	series x=age0 y=cholesterol /lineattrs=(color=black thickness=1);
+	* 95 confidence limits as line;
+	series x=age0 y=lcl / lineattrs=(color=black thickness=1 pattern=longdash);
+	series x=age0 y=ucl /  lineattrs=(color=black thickness=1 pattern=longdash);
+	* add dot for contrast ;
+	scatter x=knots_x y=knots_y / markerattrs=(color=red symbol=circlefilled size=12) ;
+	* labels;
+	xaxis label="Age, y";
+	yaxis label="Cholesterol, mmol/L";
+	run;
