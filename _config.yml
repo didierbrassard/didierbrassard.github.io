@@ -85,9 +85,9 @@ author:
   bio              : "Postdoctoral research fellow at McGill University"
   location         : "Quebec, Canada"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=Didier+Brassard"
-  googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            :
+  pubmed           : "https://pubmed.ncbi.nlm.nih.gov/?term=brassard%2C+didier%5Bauthor%5D&sort=date"
+  googlescholar    : "https://scholar.google.com/citations?user=5D57MR8AAAAJ&hl=en"
+  email            : "didier.brassard@mcgill.ca"
   researchgate     : "https://www.researchgate.net/profile/Didier-Brassard"
   uri              :
   bitbucket        :
