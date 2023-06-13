@@ -19,6 +19,7 @@ Education
 * Ph.D. in Nutrition, Université Laval, 2022
   * Thesis: *[Mesure de la qualité de l’alimentation et des habitudes alimentaires: défis et solutions](http://hdl.handle.net/20.500.11794/73728)* (Measuring diet quality and dietary habits: challenges and solutions)
   * Thesis listed on the Faculty of Graduate and Postdoctoral Studies’ Honour Roll
+  * Thesis awarded the 2023 PhD Dissertation Award by the Canadian Nutrition Society
   * Supervisors: Prof. Benoît Lamarche, Prof. Simone Lemieux
 * M.Sc. in Nutrition, Université Laval, 2017
   * Thesis: *[Étude de l'impact des gras laitiers sur la capacité des lipoprotéines de haute densité à stimuler l'efflux de cholestérol](http://hdl.handle.net/20.500.11794/27759)* (Study of the impact of dairy fats on high density lipoproteins-mediated cholesterol efflux capacity)
@@ -31,6 +32,10 @@ Work/Research experience
   * School of Human Nutrition, McGill University
   * Main project: [Health effects of adhering to Canada's food guide recommendations in older adults: a target trial emulation](https://webapps.cihr-irsc.gc.ca/decisions/p/project_details.html?applId=455011&lang=en)
   * Supervisor: Prof. Stéphanie Chevalier
+
+* 2022-2023: Data Analyst Contract
+  * Institut de Tourisme et d'Hôtellerie du Québec (ITHQ)
+  * Main tasks: provided data cleaning, transformation, manipulation and analysis consulting services.
 
 * 2021-2022: Research Intern
   * Research center of the *Institut Universitaire de Cardiologie et de Pneumologie de Québec*
