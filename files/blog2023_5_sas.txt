@@ -1,0 +1,7 @@
+FILENAME UILOG "C:/Users/YourName/Documents/YourProject/Code_log_&sysdate9..log";
+FILENAME UILST "C:/Users/YourName/Documents/YourProject/Code_output_&sysdate9..lst";
+PROC PRINTTO LOG = UILOG; run; * indicate which file to print log to;
+PROC PRINTTO print = UILST; run; * indicate which file to save output to;
+%put # Session Information: &=SYSSCP &=SYSSCPL &=SYSVER &=SYSVLONG4 (&SYSDATE9);
+/* ... Your analysis goes here ... */
+PROC PRINTTO;RUN; /* = print to the files above, resume normal log and output after */
