@@ -8,7 +8,7 @@ date: 2023-05-08
 location: "Montréal, Canada"
 ---
 
-<img src="images/talks/2023-05-08-hefi-acfas.png" width="80%" style="display: block; margin: auto;"/>
+<img src="/images/talks/2023-05-08-hefi-acfas.png" width="80%" style="display: block; margin: auto;"/>
 
 **Talk** (french): Presentation given at the 90th ACFAS conference entitled: [*L’adhésion aux recommandations du Guide alimentaire canadien 2019 assure-t-elle des apports adéquats en nutriments clés chez les adultes âgés?*](https://www.acfas.ca/evenements/congres/90/contribution/adhesion-aux-recommandations-du-guide-alimentaire-canadien-2019).
 

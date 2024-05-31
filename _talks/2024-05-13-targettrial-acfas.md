@@ -8,7 +8,7 @@ date: 2024-05-13
 location: "Ottawa, Canada"
 ---
 
-<img src="images/talks/2024-05-13-targettrial-acfas.png" width="80%" style="display: block; margin: auto;"/>
+<img src="/images/talks/2024-05-13-targettrial-acfas.png" width="80%" style="display: block; margin: auto;"/>
 
 **Talk** (french): Presentation given at the 91st ACFAS conference entitled: [*Estimation de l'effet de l'adhésion au Guide alimentaire canadien 2019 chez les personnes âgées : un protocole d'émulation d’un essai ciblé*](https://www.acfas.ca/evenements/congres/91/contribution/estimation-effet-adhesion-au-guide-alimentaire-canadien-2019).
 
