@@ -17,6 +17,7 @@ package-lock.json
 .DS_Store
 _posts/post_data/*
 _posts/*.jpg
+_posts/*.html
 *.Rmd
 *.qmd
 *.bib
