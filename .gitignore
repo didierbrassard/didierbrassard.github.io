@@ -15,4 +15,8 @@ package-lock.json
 # custom
 .Rproj.user
 .DS_Store
-
+_posts/post_data/*
+_posts/*.jpg
+*.Rmd
+*.qmd
+*.bib
