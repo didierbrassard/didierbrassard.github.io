@@ -1,0 +1,94 @@
+ /*************************************************************************/
+ /*                                                                       */
+ /*                        CCHS 2015 code snippet                         */
+ /*                                                                       */
+ /*                  Survey design and linear regression                  */
+ /*                                                                       */
+ /*                        Author: Didier Brassard                        */
+ /*                                                                       */
+ /*                               Version 1                               */
+ /*                               27OCT2022                               */
+ /*                                                                       */
+ /*************************************************************************/
+
+/************************************************/
+/*     Prepare data, including survey design    */
+/************************************************/
+
+data cchs_data;
+	merge bsw (in=a) cchs(in=b keep=ADM_RNO WTS_P ENERGY AGE SEX);
+	by ADM_RNO;
+	
+	* create male indicator;
+	if SEX=1 then MALE=1;
+	else MALE=0;
+	
+	* keep only records in both data and bsw ;
+	if a and b then output;
+run;
+
+  /* Note: Data, sampling weights and bootstrap replicate weights
+    should be in a single data */
+
+/************************************************/
+/*        Descriptive statistics example        */
+/************************************************/
+
+/* Age + SE */
+proc surveymeans data=cchs_data varmethod=brr plots=none;
+	var AGE;
+	weight WTS_P;
+	repweights BSW1-BSW500;
+run;
+
+/* Energy + SE, by sex */
+proc surveymeans data=cchs_data varmethod=brr plots=none;
+	domain SEX;
+	var ENERGY;
+	weight WTS_P;
+	repweights BSW1-BSW500;
+run;
+
+proc surveyfreq data=cchs_data varmethod=brr;
+	table SEX / nostd;
+	weight WTS_P;
+	repweights BSW1-BSW500;
+run;
+
+/************************************************/
+/*        Linear regression model example       */
+/************************************************/
+
+proc surveyreg data=cchs_data varmethod=brr ;
+	class male;
+	model ENERGY=AGE MALE / solution clparm ;
+	weight WTS_P;
+	repweights BSW1-BSW500;
+	store svy_lm ;
+	ods output ParameterEstimates = svy_lm_parm;
+run;
+
+/************************************************/
+/*      Linear regression model parameters      */
+/************************************************/
+
+proc print data=svy_lm_parm;
+	id Parameter;
+	var Estimate StdErr LowerCL UpperCL;
+	format Estimate StdErr LowerCL UpperCL 5.0;
+	title1 "Linear regression models of reported energy intake on age and sex in adults 19-70 y";
+	title2 "CCHS 2015 - Nutrition";
+	footnote1 "Adapted from Statistics Canada, Canadian Community Health Survey - Nutrition:
+    Public Use Microdata File, 2015, October 2022.
+    This does not constitute an endorsement by Statistics Canada of this product";
+run;
+
+/************************************************/
+/*         Linear regression model plot         */
+/************************************************/
+
+proc plm restore=svy_lm  noinfo noclprint ;
+	effectplot slicefit(x=age sliceby=male) / clm ;
+run;
+
+/* end of code */
