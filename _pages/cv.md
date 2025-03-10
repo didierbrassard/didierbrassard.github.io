@@ -75,4 +75,4 @@ Teaching
   
 Academic service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Peer reviewer for >70 manuscripts submitted to scientific journals. [Verified history available on *Web Of Science*](https://www.webofscience.com/wos/author/record/AAR-7579-2021)
