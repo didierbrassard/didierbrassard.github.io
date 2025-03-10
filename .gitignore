@@ -16,8 +16,10 @@ package-lock.json
 .Rproj.user
 .DS_Store
 _posts/post_data/*
-_posts/*.jpg
+_posts/**/*.jpg
+_posts/**/*.png
 _posts/*.html
 *.Rmd
 *.qmd
 *.bib
+_talks/_2013-03-01-tutorial-1.md
