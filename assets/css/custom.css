@@ -4,10 +4,3 @@ div.language-r.highlighter-rouge::after,
 figure.highlight {
   box-shadow: none !important;
 }
-
-div.language-r.highlighter-rouge .highlight {
-  margin: 0;
-  font-family: monospace;
-  font-size: 1rem;
-  line-height: 1.8;
-}
