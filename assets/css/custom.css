@@ -2,7 +2,7 @@ div.highlighter-rouge, figure.highlight, div.highlight, pre.highlight {
   box-shadow: none !important;
 }
 
-pre.highlight span {
+pre.highlight * {
   box-shadow: none !important;
-  background: none !important; /* Ensures no background issues */
+  background: none !important;
 }
