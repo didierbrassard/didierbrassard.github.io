@@ -1,8 +1,5 @@
-div.highlighter-rouge, figure.highlight, div.highlight, pre.highlight {
-  box-shadow: none !important;
-}
-
 pre.highlight * {
   box-shadow: none !important;
   background: none !important;
+  border: none !important;
 }
