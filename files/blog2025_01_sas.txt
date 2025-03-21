@@ -21,88 +21,88 @@
  /* no_stars_down   = If 1 (default=0), no stars BELOW                    */
  /*                                                                       */
  /*************************************************************************/
-		
-		%macro MakeTitle(title=,total_width=75,blankline_up=0,blankline_down=0,left_aligned=0,text_only=0,no_stars_up=0,no_stars_down=0);
-		%local n_stars title_width n_blanks heading_center left_blanks right_blanks ;
-		/* default values*/
-		%if (&blankline_up=%str()) %then %do;
-			%local blankline_up;
-			%let blankline_up=0;
-		%end;
-		%if (&blankline_down=%str()) %then %do;
-			%local blankline_down;
-			%let blankline_down=0;
-		%end;
-		%if (&text_only=%str()) %then %do;
-			%local text_only;
-			%let text_only=0;
-		%end;
-		%if (&left_aligned=%str()) %then %do;
-			%local left_aligned;
-			%let left_aligned=0;
-		%end;
-		%if (&no_stars_up=%str()) %then %do;
-			%local no_stars_up;
-			%let no_stars_up=0;
-		%end;
-		%if (&no_stars_down=%str()) %then %do;
-			%local no_stars_down;
-			%let no_stars_down=0;
-		%end;
-		
-		/* output n stars, title width + half, n blanks */
-		%let n_stars = %eval(&total_width-2);
-		%let title_width = %sysfunc(length(&title));
-		%let title_width_half = %eval(&title_width/2);
-		%let n_blanks = %eval(&total_width-4);
-		
-			/* ### Stop here if width doesnt fit, since option  not coded yet */
-			%if &title_width > %eval(&total_width-6) %then %do;
-			%put ERROR: Current title is too large to fit with a <total_width> of &total_width;
-			%put # Try a <total_width> of %eval(&title_width+6) instead;
-			%return;
-			%end;
-		
-		/* find heading center */
-		%let heading_center = %eval(%sysfunc(floor(&n_blanks/2)));
-		
-		/* calculate blanks to the right and to the left of title*/
-		%if (&left_aligned=0) %then %do; /* text is centered */
-		%let left_blanks = %eval(&heading_center-&title_width_half) ;
-		%let right_blanks = %eval(&n_blanks-(&left_blanks+&title_width));
-		%end;
-		%else %if (&left_aligned=1) %then %do; /* text is left-aligned */
-		%let left_blanks = 1 ;
-		%let right_blanks = %eval(&n_blanks-(&left_blanks+&title_width));
-		%end;
-		
-		/* output heading */
-		%if (&text_only=1) %then %do;
-		data _null_;
-			%if (&blankline_up>0) %then %do i=1 %to &blankline_up;
-				put '/*' &n_blanks*' ' '*/';
-			%end;
-			put '/*' &left_blanks*' ' "&title" &right_blanks*' ' '*/';
-			%if (&blankline_down>0) %then %do i=1 %to &blankline_down;
-				put '/*' &n_blanks*' ' '*/';
-			%end;
-		run;
-		%end;
-		%else %do;
-		data _null_;
-			%if (&no_stars_up=0) %then %do; put '/' &n_stars*'*' '/'; %end;
-			%if (&blankline_up>0) %then %do i=1 %to &blankline_up;
-				put '/*' &n_blanks*' ' '*/';
-			%end;
-			put '/*' &left_blanks*' ' "&title" &right_blanks*' ' '*/';
-			%if (&blankline_down>0) %then %do i=1 %to &blankline_down;
-				put '/*' &n_blanks*' ' '*/';
-			%end;
-			%if (&no_stars_down=0) %then %do;put '/' &n_stars*'*' '/'; %end;
-		run;
-		%end;
+	
+	%macro MakeTitle(title=,total_width=75,blankline_up=0,blankline_down=0,left_aligned=0,text_only=0,no_stars_up=0,no_stars_down=0);
+	%local n_stars title_width n_blanks heading_center left_blanks right_blanks ;
+	/* default values*/
+	%if (&blankline_up=%str()) %then %do;
+		%local blankline_up;
+		%let blankline_up=0;
+	%end;
+	%if (&blankline_down=%str()) %then %do;
+		%local blankline_down;
+		%let blankline_down=0;
+	%end;
+	%if (&text_only=%str()) %then %do;
+		%local text_only;
+		%let text_only=0;
+	%end;
+	%if (&left_aligned=%str()) %then %do;
+		%local left_aligned;
+		%let left_aligned=0;
+	%end;
+	%if (&no_stars_up=%str()) %then %do;
+		%local no_stars_up;
+		%let no_stars_up=0;
+	%end;
+	%if (&no_stars_down=%str()) %then %do;
+		%local no_stars_down;
+		%let no_stars_down=0;
+	%end;
+	
+	/* output n stars, title width + half, n blanks */
+	%let n_stars = %eval(&total_width-2);
+	%let title_width = %sysfunc(length(&title));
+	%let title_width_half = %eval(&title_width/2);
+	%let n_blanks = %eval(&total_width-4);
+	
+		/* ### Stop here if width doesnt fit, since option  not coded yet */
+		%if &title_width > %eval(&total_width-6) %then %do;
+		%put ERROR: Current title is too large to fit with a <total_width> of &total_width;
+		%put # Try a <total_width> of %eval(&title_width+6) instead;
 		%return;
-		%mend MakeTitle;
+		%end;
+	
+	/* find heading center */
+	%let heading_center = %eval(%sysfunc(floor(&n_blanks/2)));
+	
+	/* calculate blanks to the right and to the left of title*/
+	%if (&left_aligned=0) %then %do; /* text is centered */
+	%let left_blanks = %eval(&heading_center-&title_width_half) ;
+	%let right_blanks = %eval(&n_blanks-(&left_blanks+&title_width));
+	%end;
+	%else %if (&left_aligned=1) %then %do; /* text is left-aligned */
+	%let left_blanks = 1 ;
+	%let right_blanks = %eval(&n_blanks-(&left_blanks+&title_width));
+	%end;
+	
+	/* output heading */
+	%if (&text_only=1) %then %do;
+	data _null_;
+		%if (&blankline_up>0) %then %do i=1 %to &blankline_up;
+			put '/*' &n_blanks*' ' '*/';
+		%end;
+		put '/*' &left_blanks*' ' "&title" &right_blanks*' ' '*/';
+		%if (&blankline_down>0) %then %do i=1 %to &blankline_down;
+			put '/*' &n_blanks*' ' '*/';
+		%end;
+	run;
+	%end;
+	%else %do;
+	data _null_;
+		%if (&no_stars_up=0) %then %do; put '/' &n_stars*'*' '/'; %end;
+		%if (&blankline_up>0) %then %do i=1 %to &blankline_up;
+			put '/*' &n_blanks*' ' '*/';
+		%end;
+		put '/*' &left_blanks*' ' "&title" &right_blanks*' ' '*/';
+		%if (&blankline_down>0) %then %do i=1 %to &blankline_down;
+			put '/*' &n_blanks*' ' '*/';
+		%end;
+		%if (&no_stars_down=0) %then %do;put '/' &n_stars*'*' '/'; %end;
+	run;
+	%end;
+	%return;
+	%mend MakeTitle;
 
 
  /*************************************************************************/
