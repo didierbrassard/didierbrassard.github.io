@@ -1,3 +1,5 @@
-div.language-r.highlighter-rouge .highlight {
+div.highlighter-rouge, figure.highlight, div.highlight, pre.highlight {
   box-shadow: none !important;
+  border: 1px solid transparent !important; /* Optional: Check if border interferes */
+  background: none !important; /* Optional: Ensure no background styles affect shadow */
 }
