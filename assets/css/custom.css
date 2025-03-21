@@ -2,4 +2,5 @@ pre.highlight * {
   box-shadow: none !important;
   background: none !important;
   border: none !important;
+  outline: none !important;
 }
