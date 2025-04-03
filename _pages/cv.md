@@ -75,4 +75,10 @@ Teaching
   
 Academic service and leadership
 ======
+* Applied Physiology, Nutrition, and Metabolism (APNM)  
+  * Member of the [Reviewer Board](https://cdnsciencepub.com/journal/apnm/about/editorial-board)
+  * Selected as [Outstanding Reviewer in 2024](http://cdnsciencepub.com/authors-and-reviewers/recognizing-peer-reviewers)
 * Peer reviewer for >70 manuscripts submitted to scientific journals. [Verified history available on *Web Of Science*](https://www.webofscience.com/wos/author/record/AAR-7579-2021)
+
+<img src="/images/misc_apnm2024.jpg" style="width:80.0%"
+data-fig-align="center" />
