@@ -29,7 +29,12 @@ Education
 
 Work/Research experience
 ======
-* 2022-ongoing: Postdoctoral research fellow
+* 2025-ongoing: Postdoctoral research fellow
+  * Département de nutrition - Université de Montréal
+  * Main project: [Diet and 6-year muscle and cognitive trajectory in the Canadian Longitudinal Study on Aging: combining traditional and omics approaches](https://webapps.cihr-irsc.gc.ca/decisions/p/project_details.html?applId=513209&lang=en)
+  * Supervisor: Prof. Anne-Julie Tessier
+  
+* 2022-2025: Postdoctoral research fellow
   * School of Human Nutrition, McGill University
   * Main project: [Health effects of adhering to Canada's food guide recommendations in older adults: a target trial emulation](https://webapps.cihr-irsc.gc.ca/decisions/p/project_details.html?applId=455011&lang=en)
   * Supervisor: Prof. Stéphanie Chevalier
