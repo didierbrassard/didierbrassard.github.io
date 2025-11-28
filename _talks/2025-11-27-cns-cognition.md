@@ -18,7 +18,7 @@ location: "Canada"
 
 **Learning objectives**:
 
--   Identify challenges related to studying dementia\
--   Identify the main source of errors of common dietary assessment instruments\
--   Recognize limitations and assumptions of studies aiming to assess the effect of diet on cognitive health\
+-   Identify challenges related to studying dementia  
+-   Identify the main source of errors of common dietary assessment instruments  
+-   Recognize limitations and assumptions of studies aiming to assess the effect of diet on cognitive health  
 -   Explain key approaches to assess effect of diet on cognition outcomes
