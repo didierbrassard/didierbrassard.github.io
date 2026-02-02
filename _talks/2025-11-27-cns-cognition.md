@@ -12,11 +12,11 @@ location: "Canada"
 
 **Talk**: Presentation given for a Canadian Nutrition Society webinar on nutrition and cognition entitled: [Methodological Challenges in Nutrition and Cognition Research](https://cns-scn.ca/events/2025/11/27/nutrition-and-cognitive-health-nutrition-et-sante-cognitive).
 
-**Slides**: [slides are available on Google drive](https://drive.google.com/file/d/11rVYQ-mSe-9j3MaHom5QDxy65rXZbILM/view?usp=sharing)
+**Slides**: [available on Google drive](https://drive.google.com/file/d/11rVYQ-mSe-9j3MaHom5QDxy65rXZbILM/view?usp=sharing)
 
 **Recording**: [available on YouTube](https://youtu.be/uXFdFWKqgRo?si=fKEXhL4dqZ6hjjgg&t=6481)
 
-**Learning objectives**:
+**Learning outcomes**:
 
 -   Identify challenges related to studying dementia  
 -   Identify the main source of errors of common dietary assessment instruments  
