@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Didier Brassard, RD PhD"
 title_separator          : "-"
 name                     : &name "Didier Brassard"
-description              : &description "Postdoctoral research fellow at Université de Montréal"
+description              : &description "Professor of nutrition at Université du Québec à Trois-Rivières"
 url                      : https://didierbrassard.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "didierbrassard.github.io"
@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Didier Brassard, RD PhD"
   pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral research fellow at Université de Montréal"
+  bio              : "Professor of nutrition at Université du Québec à Trois-Rivières"
   location         : "Montreal, Canada"
   employer         : 
   uri              : # URL

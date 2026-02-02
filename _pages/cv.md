@@ -29,7 +29,10 @@ Education
 
 Work/Research experience
 ======
-* 2025-ongoing: Postdoctoral research fellow
+* 2026-ongoing: Professor of nutrition
+  * Département de biologie médicale - Université du Québec à Trois-Rivières
+
+* 2025-2026: Postdoctoral research fellow
   * Département de nutrition - Université de Montréal
   * Main project: [Diet and 6-year muscle and cognitive trajectory in the Canadian Longitudinal Study on Aging: combining traditional and omics approaches](https://webapps.cihr-irsc.gc.ca/decisions/p/project_details.html?applId=513209&lang=en)
   * Supervisor: Prof. Anne-Julie Tessier
@@ -83,7 +86,7 @@ Academic service and leadership
 * Applied Physiology, Nutrition, and Metabolism (APNM)  
   * Member of the [Reviewer Board](https://cdnsciencepub.com/journal/apnm/about/editorial-board)
   * Selected as [Outstanding Reviewer in 2024](http://cdnsciencepub.com/authors-and-reviewers/recognizing-peer-reviewers)
-* Peer reviewer for >70 manuscripts submitted to scientific journals. [Verified history available on *Web Of Science*](https://www.webofscience.com/wos/author/record/AAR-7579-2021)
+* Peer reviewer for >90 manuscripts submitted to scientific journals. [Verified history available on *Web Of Science*](https://www.webofscience.com/wos/author/record/AAR-7579-2021)
 
 <img src="/images/misc_apnm2024.jpg" style="width:80.0%"
 data-fig-align="center" />
