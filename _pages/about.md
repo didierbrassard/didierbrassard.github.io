@@ -8,6 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a postdoctoral research fellow at the Montreal Heart Institute (Université de Montréal). My current research interests are nutritional epidemiology and aging with applications in both surveillance and epidemiology. I am also interested in statistical modelling of dietary intakes, measurement error correction as well as causal inference.  
+I am a Professor of Nutrition at the Université du Québec à Trois-Rivières.
+My current research interests are nutritional epidemiology and aging with applications with applications in population surveillance and the study of diet–health relationships.
+I am particularly interested in the statistical modelling of dietary intakes, correction of measurement error and causal inference.
 
-The purpose of my blog is to share my research, but also what I have learned about data visualization, epidemiology and coding along the way. I hope my articles help you save time and learn new tricks.
+Through this blog, I share my research as well as practical insights on data visualization, epidemiology, and coding.
+My goal is to help others save time and learn useful techniques.
+
+Feel free to contact me for questions or potential collaborations.
